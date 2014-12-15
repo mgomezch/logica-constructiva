@@ -1,0 +1,927 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     35746,        917]
+NotebookOptionsPosition[     35315,        897]
+NotebookOutlinePosition[     35648,        912]
+CellTagsIndexPosition[     35605,        909]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"someDerivation", "/:", 
+   RowBox[{"MakeBoxes", "[", 
+    RowBox[{
+     RowBox[{"someDerivation", "[", 
+      RowBox[{"hypotheses_", ",", "conclusion_"}], "]"}], ",", "fmt_"}], 
+    "]"}], ":=", "\[IndentingNewLine]", 
+   RowBox[{"GridBox", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{"GridBox", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{"Riffle", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"MakeBoxes", "[", 
+                RowBox[{"#", ",", "fmt"}], "]"}], "&"}], "/@", "hypotheses"}],
+              ",", "\[IndentingNewLine]", 
+             RowBox[{"MakeBoxes", "[", 
+              RowBox[{
+               RowBox[{"Spacer", "[", "10", "]"}], ",", "fmt"}], "]"}]}], 
+            "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "}"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"RowAlignments", "\[Rule]", "Bottom"}]}], 
+         "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"MakeBoxes", "[", 
+         RowBox[{"\[VerticalEllipsis]", ",", "fmt"}], "]"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"MakeBoxes", "[", 
+         RowBox[{"conclusion", ",", "fmt"}], "]"}], "}"}]}], 
+      "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"RowLines", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"RowAlignments", "\[Rule]", "Bottom"}]}], "\[IndentingNewLine]", 
+    "]"}]}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"hypothesis", "/:", 
+   RowBox[{"MakeBoxes", "[", 
+    RowBox[{
+     RowBox[{"hypothesis", "[", 
+      RowBox[{"h_", ",", "name_"}], "]"}], ",", "fmt_"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"GridBox", "[", "\[IndentingNewLine]", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"GridBox", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"MakeBoxes", "[", 
+             RowBox[{
+              RowBox[{"Spacer", "[", "0", "]"}], ",", "fmt"}], "]"}], "}"}], 
+           ",", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{"MakeBoxes", "[", 
+             RowBox[{"h", ",", "fmt"}], "]"}], "}"}]}], "\[IndentingNewLine]",
+           "}"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"RowLines", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+         
+         RowBox[{"RowAlignments", "\[Rule]", "Bottom"}]}], 
+        "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"MakeBoxes", "[", 
+        RowBox[{"name", ",", "fmt"}], "]"}]}], "\[IndentingNewLine]", "}"}], 
+     "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"rule", "/:", 
+   RowBox[{"MakeBoxes", "[", 
+    RowBox[{
+     RowBox[{"rule", "[", 
+      RowBox[{"hypotheses_", ",", "conclusion_", ",", "name_"}], "]"}], ",", 
+     "fmt_"}], "]"}], ":=", "\[IndentingNewLine]", 
+   RowBox[{"GridBox", "[", "\[IndentingNewLine]", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"GridBox", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{"GridBox", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"{", "\[IndentingNewLine]", 
+               RowBox[{"Riffle", "[", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"MakeBoxes", "[", 
+                    RowBox[{"#", ",", "fmt"}], "]"}], "&"}], "/@", 
+                  "hypotheses"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{"MakeBoxes", "[", 
+                  RowBox[{
+                   RowBox[{"Spacer", "[", "10", "]"}], ",", "fmt"}], "]"}]}], 
+                "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "}"}], 
+              ",", "\[IndentingNewLine]", 
+              RowBox[{"RowAlignments", "\[Rule]", "Bottom"}]}], 
+             "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{"MakeBoxes", "[", 
+             RowBox[{"conclusion", ",", "fmt"}], "]"}], "\[IndentingNewLine]",
+             "}"}]}], "\[IndentingNewLine]", "}"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"RowLines", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
+         
+         RowBox[{"RowAlignments", "\[Rule]", "Bottom"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"BaselinePosition", "\[Rule]", 
+          RowBox[{"(", 
+           RowBox[{"1", "\[Rule]", 
+            RowBox[{"Scaled", "[", "0.5", "]"}]}], ")"}]}]}], 
+        "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"MakeBoxes", "[", 
+        RowBox[{"name", ",", "fmt"}], "]"}]}], "\[IndentingNewLine]", "}"}], 
+     "\[IndentingNewLine]", "}"}], "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ipl", "=", 
+    RowBox[{"Grid", "[", "\[IndentingNewLine]", 
+     RowBox[{GridBox[{
+        {
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"A", " ", "true"}], ",", 
+             RowBox[{"B", " ", "true"}]}], "}"}], ",", "\[IndentingNewLine]", 
+           
+           RowBox[{"A", "\[And]", 
+            RowBox[{"B", " ", "true"}]}], ",", "\[IndentingNewLine]", 
+           "\"\<\[And]I\>\""}], "\[IndentingNewLine]", "]"}], 
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"A", "\[And]", 
+             RowBox[{"B", " ", "true"}]}], "}"}], ",", "\[IndentingNewLine]", 
+           
+           RowBox[{"A", " ", "true"}], ",", "\[IndentingNewLine]", 
+           "\"\<\[And]\!\(\*SubscriptBox[\(E\), \(L\)]\)\>\""}], "]"}], 
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"A", "\[And]", 
+             RowBox[{"B", " ", "true"}]}], "}"}], ",", "\[IndentingNewLine]", 
+           
+           RowBox[{"B", " ", "true"}], ",", "\[IndentingNewLine]", 
+           "\"\<\[And]\!\(\*SubscriptBox[\(E\), \(R\)]\)\>\""}], 
+          "\[IndentingNewLine]", "]"}]},
+        {
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"A", " ", "true"}], "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"A", "\[Or]", 
+            RowBox[{"B", " ", "true"}]}], ",", "\[IndentingNewLine]", 
+           "\"\<\[Or]\!\(\*SubscriptBox[\(I\), \(L\)]\)\>\""}], 
+          "\[IndentingNewLine]", "]"}], 
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"A", " ", "true"}], "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"A", "\[Or]", 
+            RowBox[{"B", " ", "true"}]}], ",", "\[IndentingNewLine]", 
+           "\"\<\[Or]\!\(\*SubscriptBox[\(I\), \(L\)]\)\>\""}], 
+          "\[IndentingNewLine]", "]"}], 
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"A", "\[Or]", 
+              RowBox[{"B", " ", "true"}]}], ",", "\[IndentingNewLine]", 
+             RowBox[{"someDerivation", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"hypothesis", "[", 
+                 RowBox[{
+                  RowBox[{"A", " ", "true"}], ",", "u"}], "]"}], "}"}], ",", 
+               RowBox[{"C", " ", "true"}]}], "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"someDerivation", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"hypothesis", "[", 
+                 RowBox[{
+                  RowBox[{"B", " ", "true"}], ",", "v"}], "]"}], "}"}], ",", 
+               RowBox[{"C", " ", "true"}]}], "]"}]}], "\[IndentingNewLine]", 
+            "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"C", " ", "true"}], ",", "\[IndentingNewLine]", 
+           "\"\<\[Or]\!\(\*SubscriptBox[\(E\), \(u, \\\ v\)]\)\>\""}], 
+          "\[IndentingNewLine]", "]"}]},
+        {
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{"someDerivation", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"hypothesis", "[", 
+                RowBox[{
+                 RowBox[{"A", " ", "true"}], ",", " ", "u"}], "]"}], "}"}], 
+              ",", "\[IndentingNewLine]", 
+              RowBox[{"B", " ", "true"}]}], "\[IndentingNewLine]", "]"}], 
+            "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"A", "\[Superset]", 
+            RowBox[{"B", " ", "true"}]}], ",", "\[IndentingNewLine]", 
+           "\"\<\[Superset]\!\(\*SubscriptBox[\(I\), \(u\)]\)\>\""}], 
+          "\[IndentingNewLine]", "]"}], 
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"A", " ", "true"}], ",", " ", 
+             RowBox[{"A", "\[Superset]", 
+              RowBox[{"B", " ", "true"}]}]}], "}"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"B", " ", "true"}], ",", "\[IndentingNewLine]", 
+           "\"\<\[Superset]E\>\""}], "\[IndentingNewLine]", "]"}], " "},
+        {
+         RowBox[{"hypothesis", "[", 
+          RowBox[{"\"\<\[DownTee] true\>\"", ",", "\"\<\[DownTee]I\>\""}], 
+          "]"}], 
+         RowBox[{"rule", "[", 
+          RowBox[{
+           RowBox[{"{", "\"\<\[UpTee] true\>\"", "}"}], ",", 
+           RowBox[{"A", " ", "true"}], ",", "\"\<\[UpTee]E\>\""}], "]"}], 
+         "\"\<\[Not]A\!\(\*OverscriptBox[\(\[Congruent]\), \(def\)]\)A\
+\[Superset]\[UpTee]\>\""}
+       }], "\[IndentingNewLine]", ",", "\[IndentingNewLine]", 
+      RowBox[{"Frame", "\[Rule]", "All"}]}], "\[IndentingNewLine]", "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ipl", "//", "TraditionalForm"}]}], "Input",
+ CellChangeTimes->CompressedData["
+1:eJwdzVtMkgEABWAlcZmaVxJduJXpokZLGs3pUJGKSgvtskJDxIHF/+CFylGY
+SjmmEtjWcNYaLlnimrPpzMBLoU0tMwulB1luzswHNYoNZ5um/YeHs+/h7Ozs
+Ky67IKf4+flxyMBDzKWwDOoK70jEOTpMEnTshesmLxO2SwdYcPRiihq+idHV
+Qtv7Rxp4KTxOD2fExw1wt+hfMzyvf9oOp2caXkJqsnwCji89+QqHlC6H70/q
+CMwktR+lRMCcUw9i4B3idiyUzncyIKXfkACrx36fhiGulMuQmbNYBEX5eTJ4
+lzOsgFkbEQT85UypgC0uiU+bu6ISCq4Eq2HdEKcRTumjdFBS6uiGq3SRFS5n
+hkl4pInfN+Qw6lbfTVi3xjVBoquqDX5cHLTDoI7UL7DYbvHAkOfBf2ELX7EJ
+x21O/yzSSEXvMXhW+LgAmsxuAjJ5skrYIDSpoKerqgZqP9zTQPPsVhNMH7EY
+YWc5a9S3F+f5nIwNmIPe+p5lKJyb3MEnDajdvxNuvWbTIPtVEAM2/lQkwGcH
+Dh+EkdfcyXAXIWbDuHkuH8pcrUK4dj+9AI68qxBDUy5VBjm6+jIYWqiuguJA
+WjVUGUIfwrZmWpOvL/pkgTeyld2Qu5nbB9OqPf1wITprGLoDSscgg2qdgHt4
+JQvQ0GNdhSub2/4nSDX560GwZtIcBV+otHQooRfEwh+C8HjIivYkQeIznwVb
+DYpUGG9UZsAzgulM+Ke76CT8RkvOho3XCSHsTdu6Cp3liYXQ65jVwsGSASN8
+O7Vtgv8BDRZl4w==
+  "]],
+
+Cell[BoxData[
+ FormBox[
+  TagBox[GridBox[{
+     {GridBox[{
+        {GridBox[{
+           {GridBox[{
+              {
+               RowBox[{"A", " ", "true"}], 
+               InterpretationBox[
+                StyleBox[
+                 GraphicsBox[{},
+                  BaselinePosition->Baseline,
+                  ImageSize->{10, 0}],
+                 CacheGraphics->False],
+                Spacer[10]], 
+               RowBox[{"B", " ", "true"}]}
+             },
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+           {
+            RowBox[{"A", "\[And]", 
+             RowBox[{"B", " ", "true"}]}]}
+          },
+          BaselinePosition->(1 -> Scaled[0.5]),
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[And]I\"\>"}
+       }], GridBox[{
+        {GridBox[{
+           {GridBox[{
+              {
+               RowBox[{"A", "\[And]", 
+                RowBox[{"B", " ", "true"}]}]}
+             },
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+           {
+            RowBox[{"A", " ", "true"}]}
+          },
+          BaselinePosition->(1 -> Scaled[0.5]),
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[And]\\!\\(\\*SubscriptBox[\\(E\\), \
+\\(L\\)]\\)\"\>"}
+       }], GridBox[{
+        {GridBox[{
+           {GridBox[{
+              {
+               RowBox[{"A", "\[And]", 
+                RowBox[{"B", " ", "true"}]}]}
+             },
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+           {
+            RowBox[{"B", " ", "true"}]}
+          },
+          BaselinePosition->(1 -> Scaled[0.5]),
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[And]\\!\\(\\*SubscriptBox[\\(E\\), \
+\\(R\\)]\\)\"\>"}
+       }]},
+     {GridBox[{
+        {GridBox[{
+           {GridBox[{
+              {
+               RowBox[{"A", " ", "true"}]}
+             },
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+           {
+            RowBox[{"A", "\[Or]", 
+             RowBox[{"B", " ", "true"}]}]}
+          },
+          BaselinePosition->(1 -> Scaled[0.5]),
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[Or]\\!\\(\\*SubscriptBox[\\(I\\), \
+\\(L\\)]\\)\"\>"}
+       }], GridBox[{
+        {GridBox[{
+           {GridBox[{
+              {
+               RowBox[{"A", " ", "true"}]}
+             },
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+           {
+            RowBox[{"A", "\[Or]", 
+             RowBox[{"B", " ", "true"}]}]}
+          },
+          BaselinePosition->(1 -> Scaled[0.5]),
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[Or]\\!\\(\\*SubscriptBox[\\(I\\), \
+\\(L\\)]\\)\"\>"}
+       }], GridBox[{
+        {GridBox[{
+           {GridBox[{
+              {
+               RowBox[{"A", "\[Or]", 
+                RowBox[{"B", " ", "true"}]}], 
+               InterpretationBox[
+                StyleBox[
+                 GraphicsBox[{},
+                  BaselinePosition->Baseline,
+                  ImageSize->{10, 0}],
+                 CacheGraphics->False],
+                Spacer[10]], GridBox[{
+                 {GridBox[{
+                    {GridBox[{
+                    {GridBox[{
+                    {
+                    InterpretationBox[
+                    StyleBox[
+                    GraphicsBox[{},
+                    BaselinePosition->Baseline,
+                    ImageSize->{0, 0}],
+                    CacheGraphics->False],
+                    Spacer[0]]},
+                    {
+                    RowBox[{"A", " ", "true"}]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                    
+                    GridBoxDividers->{
+                    "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}], 
+                    "u"}
+                    }]}
+                   },
+                   
+                   GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+                 {"\[VerticalEllipsis]"},
+                 {
+                  RowBox[{"C", " ", "true"}]}
+                },
+                
+                GridBoxAlignment->{
+                 "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                  "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                
+                GridBoxDividers->{
+                 "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                  "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}], 
+               InterpretationBox[
+                StyleBox[
+                 GraphicsBox[{},
+                  BaselinePosition->Baseline,
+                  ImageSize->{10, 0}],
+                 CacheGraphics->False],
+                Spacer[10]], GridBox[{
+                 {GridBox[{
+                    {GridBox[{
+                    {GridBox[{
+                    {
+                    InterpretationBox[
+                    StyleBox[
+                    GraphicsBox[{},
+                    BaselinePosition->Baseline,
+                    ImageSize->{0, 0}],
+                    CacheGraphics->False],
+                    Spacer[0]]},
+                    {
+                    RowBox[{"B", " ", "true"}]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                    
+                    GridBoxDividers->{
+                    "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}], 
+                    "v"}
+                    }]}
+                   },
+                   
+                   GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+                 {"\[VerticalEllipsis]"},
+                 {
+                  RowBox[{"C", " ", "true"}]}
+                },
+                
+                GridBoxAlignment->{
+                 "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                  "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                
+                GridBoxDividers->{
+                 "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                  "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]}
+             },
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+           {
+            RowBox[{"C", " ", "true"}]}
+          },
+          BaselinePosition->(1 -> Scaled[0.5]),
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[Or]\\!\\(\\*SubscriptBox[\\(E\\), \
+\\(u, \\\\ v\\)]\\)\"\>"}
+       }]},
+     {GridBox[{
+        {GridBox[{
+           {GridBox[{
+              {GridBox[{
+                 {GridBox[{
+                    {GridBox[{
+                    {GridBox[{
+                    {
+                    InterpretationBox[
+                    StyleBox[
+                    GraphicsBox[{},
+                    BaselinePosition->Baseline,
+                    ImageSize->{0, 0}],
+                    CacheGraphics->False],
+                    Spacer[0]]},
+                    {
+                    RowBox[{"A", " ", "true"}]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                    
+                    GridBoxDividers->{
+                    "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}], 
+                    "u"}
+                    }]}
+                   },
+                   
+                   GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+                 {"\[VerticalEllipsis]"},
+                 {
+                  RowBox[{"B", " ", "true"}]}
+                },
+                
+                GridBoxAlignment->{
+                 "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                  "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                
+                GridBoxDividers->{
+                 "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                  "Rows" -> {False, {True}, False}, "RowsIndexed" -> {}}]}
+             },
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+           {
+            RowBox[{"A", "\[Superset]", 
+             RowBox[{"B", " ", "true"}]}]}
+          },
+          BaselinePosition->(1 -> Scaled[0.5]),
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[Superset]\\!\\(\\*SubscriptBox[\\(I\
+\\), \\(u\\)]\\)\"\>"}
+       }], GridBox[{
+        {GridBox[{
+           {GridBox[{
+              {
+               RowBox[{"A", " ", "true"}], 
+               InterpretationBox[
+                StyleBox[
+                 GraphicsBox[{},
+                  BaselinePosition->Baseline,
+                  ImageSize->{10, 0}],
+                 CacheGraphics->False],
+                Spacer[10]], 
+               RowBox[{"A", "\[Superset]", 
+                RowBox[{"B", " ", "true"}]}]}
+             },
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+           {
+            RowBox[{"B", " ", "true"}]}
+          },
+          BaselinePosition->(1 -> Scaled[0.5]),
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[Superset]E\"\>"}
+       }], ""},
+     {GridBox[{
+        {GridBox[{
+           {
+            InterpretationBox[
+             StyleBox[
+              GraphicsBox[{},
+               BaselinePosition->Baseline,
+               ImageSize->{0, 0}],
+              CacheGraphics->False],
+             Spacer[0]]},
+           {"\<\"\[DownTee] true\"\>"}
+          },
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[DownTee]I\"\>"}
+       }], GridBox[{
+        {GridBox[{
+           {GridBox[{
+              {"\<\"\[UpTee] true\"\>"}
+             },
+             
+             GridBoxAlignment->{
+              "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+               "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+           {
+            RowBox[{"A", " ", "true"}]}
+          },
+          BaselinePosition->(1 -> Scaled[0.5]),
+          
+          GridBoxAlignment->{
+           "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+          
+          GridBoxDividers->{
+           "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+            "Rows" -> {False, {True}, False}, 
+            "RowsIndexed" -> {}}], "\<\"\[UpTee]E\"\>"}
+       }], "\<\"\[Not]A\\!\\(\\*OverscriptBox[\\(\[Congruent]\\), \
+\\(def\\)]\\)A\[Superset]\[UpTee]\"\>"}
+    },
+    AutoDelete->False,
+    GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Grid"], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.626640073127045*^9, 3.626640309760912*^9, {3.626640339830841*^9, 
+   3.62664036725383*^9}, 3.62664043986807*^9, {3.626640564391478*^9, 
+   3.626640573728218*^9}, {3.626640607615418*^9, 3.626640633509436*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rule", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{"rule", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{"hypothesis", "[", 
+             RowBox[{
+              RowBox[{"A", "\[And]", 
+               RowBox[{"B", " ", "true"}]}], ",", " ", "\"\<u\>\""}], "]"}], 
+            "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"B", " ", "true"}], ",", "\[IndentingNewLine]", 
+           "\"\<\[And]\!\(\*SubscriptBox[\(E\), \(R\)]\)\>\""}], 
+          "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"rule", "[", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{"hypothesis", "[", 
+             RowBox[{
+              RowBox[{"A", "\[And]", 
+               RowBox[{"B", " ", "true"}]}], ",", " ", "\"\<u\>\""}], "]"}], 
+            "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"A", " ", "true"}], ",", "\[IndentingNewLine]", 
+           "\"\<\[And]\!\(\*SubscriptBox[\(E\), \(L\)]\)\>\""}], 
+          "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"B", "\[And]", 
+        RowBox[{"A", " ", "true"}]}], ",", "\[IndentingNewLine]", 
+       "\"\<\[And]I\>\""}], "\[IndentingNewLine]", "]"}], 
+     "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"A", "\[And]", "B"}], ")"}], "\[Superset]", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"B", "\[And]", "A"}], ")"}], " ", "true"}]}], ",", 
+    "\[IndentingNewLine]", 
+    "\"\<\[Superset]\!\(\*SubscriptBox[\(I\), \(u\)]\)\>\""}], 
+   "\[IndentingNewLine]", "]"}], "//", "TraditionalForm"}]], "Input",
+ CellChangeTimes->{{3.626640675429165*^9, 3.626640764341743*^9}, {
+  3.626640795528192*^9, 3.626640886957597*^9}, {3.626640922018903*^9, 
+  3.626641101779125*^9}}],
+
+Cell[BoxData[
+ FormBox[GridBox[{
+    {GridBox[{
+       {GridBox[{
+          {GridBox[{
+             {GridBox[{
+                {GridBox[{
+                   {GridBox[{
+                    {GridBox[{
+                    {GridBox[{
+                    {GridBox[{
+                    {GridBox[{
+                    {
+                    InterpretationBox[
+                    StyleBox[
+                    GraphicsBox[{},
+                    BaselinePosition->Baseline,
+                    ImageSize->{0, 0}],
+                    CacheGraphics->False],
+                    Spacer[0]]},
+                    {
+                    RowBox[{"A", "\[And]", 
+                    RowBox[{"B", " ", "true"}]}]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                    
+                    GridBoxDividers->{
+                    "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {False, {True}, False}, 
+                    "RowsIndexed" -> {}}], "\<\"u\"\>"}
+                    }]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+                    {
+                    RowBox[{"B", " ", "true"}]}
+                    },
+                    BaselinePosition->(1 -> Scaled[0.5]),
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                    
+                    GridBoxDividers->{
+                    "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {False, {True}, False}, 
+                    "RowsIndexed" -> {}}], \
+"\<\"\[And]\\!\\(\\*SubscriptBox[\\(E\\), \\(R\\)]\\)\"\>"}
+                    }], 
+                    InterpretationBox[
+                    StyleBox[
+                    GraphicsBox[{},
+                    BaselinePosition->Baseline,
+                    ImageSize->{10, 0}],
+                    CacheGraphics->False],
+                    Spacer[10]], GridBox[{
+                    {GridBox[{
+                    {GridBox[{
+                    {GridBox[{
+                    {GridBox[{
+                    {
+                    InterpretationBox[
+                    StyleBox[
+                    GraphicsBox[{},
+                    BaselinePosition->Baseline,
+                    ImageSize->{0, 0}],
+                    CacheGraphics->False],
+                    Spacer[0]]},
+                    {
+                    RowBox[{"A", "\[And]", 
+                    RowBox[{"B", " ", "true"}]}]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                    
+                    GridBoxDividers->{
+                    "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {False, {True}, False}, 
+                    "RowsIndexed" -> {}}], "\<\"u\"\>"}
+                    }]}
+                    },
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+                    {
+                    RowBox[{"A", " ", "true"}]}
+                    },
+                    BaselinePosition->(1 -> Scaled[0.5]),
+                    
+                    GridBoxAlignment->{
+                    "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+                    
+                    GridBoxDividers->{
+                    "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {False, {True}, False}, 
+                    "RowsIndexed" -> {}}], \
+"\<\"\[And]\\!\\(\\*SubscriptBox[\\(E\\), \\(L\\)]\\)\"\>"}
+                    }]}
+                  },
+                  
+                  GridBoxAlignment->{
+                   "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                    "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+                {
+                 RowBox[{"B", "\[And]", 
+                  RowBox[{"A", " ", "true"}]}]}
+               },
+               BaselinePosition->(1 -> Scaled[0.5]),
+               
+               GridBoxAlignment->{
+                "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {{Bottom}}, "RowsIndexed" -> {}},
+               
+               GridBoxDividers->{
+                "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+                 "Rows" -> {False, {True}, False}, 
+                 "RowsIndexed" -> {}}], "\<\"\[And]I\"\>"}
+            }]}
+         },
+         GridBoxAlignment->{
+          "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, 
+           "Rows" -> {{Bottom}}, "RowsIndexed" -> {}}]},
+       {
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"A", "\[And]", "B"}], ")"}], "\[Superset]", 
+         RowBox[{"true", " ", 
+          RowBox[{"(", 
+           RowBox[{"B", "\[And]", "A"}], ")"}]}]}]}
+      },
+      BaselinePosition->(1 -> Scaled[0.5]),
+      GridBoxAlignment->{
+       "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Bottom}}, 
+        "RowsIndexed" -> {}},
+      GridBoxDividers->{
+       "Columns" -> {{False}}, "ColumnsIndexed" -> {}, 
+        "Rows" -> {False, {True}, False}, 
+        "RowsIndexed" -> {}}], "\<\"\[Superset]\\!\\(\\*SubscriptBox[\\(I\\), \
+\\(u\\)]\\)\"\>"}
+   }], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.626640745352917*^9, 3.626640766967812*^9}, {
+  3.626640878819921*^9, 3.626640887926158*^9}, {3.626641032552064*^9, 
+  3.626641103163307*^9}}]
+}, Open  ]]
+},
+WindowSize->{1243, 621},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Linux x86 (32-bit) (June 27, 2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 11556, 257, 2250, "Input"],
+Cell[12139, 281, 14916, 408, 314, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27092, 694, 2174, 47, 583, "Input"],
+Cell[29269, 743, 6030, 151, 125, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

@@ -1,0 +1,109 @@
+Términos de interés: <!--{{{-->
+*   Intuitionistic propositional logic (IPL)
+*   Structural proof theory
+*   Gentzen-Prawitz natural deduction
+*   Gentzen inversion principle
+*   Hauptsatz: the cut elimination theorem
+*   Sequent calculus
+*   Heyting algebra
+*   Brouwer-Heyting-Kolmogorov interpretation
+*   Martin-Löf type theory (MLTT)
+*   Intensional type theory
+*   Homotopy type theory
+<!--}}}-->
+Por revisar: <!--{{{-->
+*   **Natural deduction: a proof-theoretical study**, Dag Prawitz, 1965 (no lo tengo)
+*   **The logical basis of metaphysics**, Michael Dummett, 1976 (no lo tengo)
+*   **Elements of intuitionism**, Michael Dummett, 1977 (no lo tengo)
+*   **Intuitionistic type theory**, Per Martin-Löf, 1984 (no lo tengo)
+*   **On the meanings of the logical constants and the justifications of the logical laws**, Per Martin-Löf, 1996 (no lo tengo)
+*   **Structural proof theory**, Sara Negri & Jan von Plato (no lo tengo)
+*   **Programming in Martin-Löf’s type theory, an introduction**, Bengt Nordström & Kent Petersson & Jan M. Smith, 1990
+*   **Type theory and functional programming**, Simon Thompson, 1999
+*   **Classical and constructive logic**, Jeremy Avgigad, 2000
+*   **Introduction to constructive logic and mathematics**, Thomas Streicher, 2001?
+*   **Types and programming languages**, Benjamin Pierce, 2002
+*   **Mathematics for computer scientists**, Thorsten Altenkirch, 2005 (notas de clase)
+*   **Introduction to natural deduction**, Daniel Clemente Laboreo, 2005 (guía de estudio, en español)
+<!--}}}-->
+Revisado: <!--{{{-->
+*   **Gentzen-Prawitz natural deduction as a teaching tool**, Jean-François Monin & Cristian Ene & Michaël Périn, 2009 <!--{{{-->
+
+    Un experimento de cuatro años de enseñar razonamiento lógico formal a estudiantes de pregrado de primer año de ciencias de la computación usando deducción natural al estilo de Gentzen y Prawitz, con árboles de prueba en vez de álgebra booleana y funciones de valor de verdad.
+
+    Lógica usada: IPL + PEM + DNE, aunque sugieren introducir PEM y DNE tarde y hacer gran parte del curso sin ellos e incluso sin la definición de negación.
+
+    Introducen una noción de prueba por equivalencia para hacer que las pruebas sean modulares y puedan reusarse unas pruebas para hacer otras.  Como en Lógica Simbólica pero los axiomas deben probarse con las reglas de inferencia.
+
+    Énfasis en usar las hipótesis con cuidadito.
+
+    Conclusión: les fue bien, aunque los estudiantes no necesariamente entienden la conexión entre una demostración hecha con un árbol de prueba, y una demostración en lenguaje natural.
+<!--}}}-->
+*   **Semantics of intuitionistic propositional logic**, Erik Palmgren, 2009 <!--{{{-->
+
+    Semántica de lógica clásica e intuicionista con álgebras de Heyting y con semántica de mundos posibles de Kripke.
+
+    Son notas de clase, y la estructura parece adecuada para diseñar clases sobre semántica de lógicas constructivas.  Sin embargo, el material probablemente no sea adecuado para un curso introductorio de lógica, ya que se hacen referencias a la teoría de reticulados.  Quizá podría integrarse este tema a un curso de matemáticas discretas, si resulta de interés.
+<!--}}}-->
+*   **Logic, part II: intuitionistic logic and natural deduction**, Max Schäfer, Formosan summer school on logic, language, and computation, 2007 <!--{{{-->
+
+    Láminas de una clase sobre lógica intuicionista con deducción natural.
+
+    Parece asumir una presentación previa de lógica clásica, y hace comparaciones con ella — se dedica bastante esfuerzo a comparar lo que pueda probarse en lógica clásica con lo que puede probarse en la intuicionista, y se resalta cuáles inferencias son admisibles en cada sistema.
+
+    Tiene bastantes ejemplos de árboles de deducción.
+<!--}}}-->
+*   **Automated theorem proving**, Frank Pfenning, 2004 <!--{{{-->
+
+    Notas para un curso avanzado de lógica.
+
+    Excelente introducción a deducción natural y lógica intuicionista, y más adelante hace una buena presentación de secuentes, aunque un poco indirecta y complicada — está orientada a diseñar algoritmos para automatización de pruebas.
+<!--}}}-->
+*   **Introduction to type theory**, Herman Geuvers <!--{{{-->
+
+    Clase de doctorado de 5 horas para introducir a teorías de tipo.  Avanzadísimo y genial, y nada apropiado para estudiantes de primer año.  Interesante para mostrárselo a Ricardo.
+<!--}}}-->
+*   **Constructive logic**, Frank Pfenning, 2000 <!--{{{-->
+
+    Notas completas para un curso de lógica constructiva para la computación.
+
+    Este documento es el más completo y más parecido al curso que se intenta definir.
+
+    Comienza con una discusión detallada de una lógica proposicional intuicionista con deducción natural, justificando las reglas de inferencia en el principio de inversión de Gentzen y sin introducir secuentes como objetos.
+
+    Se hace una presentación breve de normalización de pruebas usando juicios separados.
+
+    Luego se presentan juicios que asocian términos de un cálculo funcional a cada proposición, y se construyen programas junto con sus equivalentes proposicionales (vía Curry–Howard) al formar deducciones, todavía sin introducir secuentes.  Incluso se muestran pasos de reducción de programas.
+
+    Luego se introducen secuentes, y se muestran con ellos nociones básicas de semántica.  Se muestra cómo definir un tipo vía reglas de inferencia para introducirlo y eliminarlo.  Se definen los tipos entero, booleano, y el tipo de las listas de otro tipo (paramétrico y recursivo!) bajo este esquema.
+
+    Luego se desarrolla una lógica de primer órden que acompaña a la construcción de términos polimórficos, y se construyen algunos.  También se restringe la cuantificación al tipo `nat` y se obtiene una aritmética de primer órden, y se prueban algunas propiedades de los enteros similares a las que se muestran en los cursos de matemáticas discretas, pero constructivamente y con mucho esfuerzo.  También se hace un estudio inductivo de listas polimórficas y se deduce la noción de inducción completa sobre los naturales.  Finalmente, se hace un estudio introductorio de tipos dependientes.
+
+    Ojo: se discute que la lógica del texto es de primer orden — no es ni multi-universo ni de orden superior.
+<!--}}}-->
+*   **Practical foundations for programming languages**, Robert Harper, 2012 (o preview del 2014 — hay varias versiones) <!--{{{-->
+
+    Estudio de la estática y dinámica de lenguajes de programación desde la perspectiva de la lógica constructiva.
+
+    La parte 1 presenta una lógica intuicionista vía deducción natural al mismo estilo de las notas de Frank Pfenning — suelen dar el curso juntos.  Comienza con una presentación general de árboles de sintaxis como concepto general de fórmula, y muestra árboles de asociación (abstract binding trees) que son ASTs con variables y parámetros.  La discusión es bastante avanzada.  Luego se consideran sistemas de reglas de inferencia para juicios hechos sobre fórmulas definidas como ASTs y ABTs.  Es un poco avanzada la presentación, pero proporciona una definición clara del concepto general de fórmula, lo cual es interesante.  Se hace un estudio de varias formas de inducción con reglas de inferencia, y se presentan muchas maneras de realizar juicios hipotéticos con secuentes, aunque evadiendo el término.
+
+    El resto del libro hace un estudio muy detallado de la estática y dinámica de varios aspectos de lenguajes de programación: especificaciones de sistemas de tipos y reglas de evaluación mediante reglas de inferencia.
+
+    El capítulo 30 presenta una elaboración de las ideas básicas de lógica intuicionista para un análisis de la lógica constructiva y términos que representan pruebas.  En particular, se discute la correspondencia Curry–Howard, aunque no se usa mucho ese nombre.
+<!--}}}-->
+*   **Natural deduction: some recent developments**, Jan von Plato, 2003 <!--{{{-->
+
+    Algunas notas interesantes sobre la relación entre el cálculo de secuentes y la deducción natural, y sobre una manera interesante de interpretar el principio de inversión de Gentzen para formar con más uniformidad las reglas de inferencia de una lógica constructiva.
+<!--}}}-->
+*   **Constructive logics, part I: a tutorial on proof systems and typed λ-calculi**, Jean Gallier, 2005
+
+    Excelente material de referencia sobre la formación de varios sistemas lógicos de deducción natural y cálculos de secuentes, proposicionales y de primer orden, intuicionistas y clásicos, y se muestran varios cálculos de términos de prueba (λ-cálculos tipados).
+
+    Se presentan pruebas completas del teorema de eliminación de cortes para varios sistemas.
+
+    El material es considerablemente avanzado, pero es excelente como referencia de la relación entre varias lógicas y podría ayudar a seleccionar o diseñar un sistema sencillo para el curso.
+
+    Hay una discusión interesante cerca del comienzo sobre notación con buenas recomendaciones.
+
+    Hay una sugerencia de Ascánder. :O!
+<!--}}}-->
