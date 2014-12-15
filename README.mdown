@@ -11,6 +11,7 @@ Términos de interés: <!--{{{-->
 *   Intensional type theory
 *   Homotopy type theory
 <!--}}}-->
+
 Por revisar: <!--{{{-->
 *   **Natural deduction: a proof-theoretical study**, Dag Prawitz, 1965 (no lo tengo)
 *   **The logical basis of metaphysics**, Michael Dummett, 1976 (no lo tengo)
@@ -26,6 +27,7 @@ Por revisar: <!--{{{-->
 *   **Mathematics for computer scientists**, Thorsten Altenkirch, 2005 (notas de clase)
 *   **Introduction to natural deduction**, Daniel Clemente Laboreo, 2005 (guía de estudio, en español)
 <!--}}}-->
+
 Revisado: <!--{{{-->
 *   **Gentzen-Prawitz natural deduction as a teaching tool**, Jean-François Monin & Cristian Ene & Michaël Périn, 2009 <!--{{{-->
 
